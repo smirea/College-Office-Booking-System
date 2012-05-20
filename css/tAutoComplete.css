@@ -1,0 +1,24 @@
+
+.tAutoComplete-wrapper{
+	display		: none;
+	border		: 1px solid #696969;
+	background	: rgba(255, 255, 255, 0.85);
+	margin		: 0;
+	padding		: 5px;
+	min-height	: 1px;
+	max-height	: 100px;
+	overflow		: auto;
+	color			: #333333;
+}
+
+.tAutoComplete-element{
+	border-top			: 1px solid #696969;
+	background			: #eaeaea;
+	margin				: 0;
+	padding				: 2px;
+	list-style-type	: none;
+}
+
+.tAutoComplete-focused{
+	background 	: orange;
+}

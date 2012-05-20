@@ -1,0 +1,200 @@
+@import url('UserManager.css');
+@import url('tPopup.css');
+@import url('tAutoComplete.css');
+
+body{
+	background	: #C2E6FC url('../images/background.jpg') no-repeat 0 0;
+}
+
+.ui-widget { font-size: 12px; }
+
+#main{
+	display	: block;
+	width		: 900px;
+	margin	: 0 auto;
+}
+#main, #main table{
+  font-family : verdana, arial;
+  font-size   : 10pt;
+}
+#main #sessionDiv{
+	margin-bottom	: 3px;
+	width				: 100%;
+	padding			: 1px;
+	font-family		: verdana;
+	font-size		: 9pt;
+}
+#main #sessionDiv a{
+	color					: #365C93;
+	text-decoration	: none;
+}
+#main #sessionDiv a:hover{
+	text-decoration	: underline;
+}
+#bookingTable{
+	border		: 1px solid #696969;
+	background	: #eaeaea;
+	width			: 100%;
+	padding		: 3px;
+}
+#bookingTable td{	
+  position  : relative;
+  padding	  : 1px 3px; 
+}
+#bookingTable input, #bookingTable select{	font-family	: trebuchet, arial; }
+#bookingTable thead a, #bookingTable thead{
+	font-family			: trebuchet, arial;
+	font-size			: 10pt;
+	font-weight			: bold;
+	text-decoration	: none;
+	color					: black;
+}
+#bookingTable thead a{ 
+	display	: block;
+}
+#bookingTable thead a:hover{
+	color					: blue;
+}
+#bookingTable thead td{	border-bottom	: 2px solid black; }
+#bookingTable tbody .tr0{ background-color	: #C7D7EC; }
+#bookingTable tbody .tr1{ background-color	: #FFFFFF; }
+#bookingTable .selectedTR{
+  background  : orange!important;
+}
+#bookingTable td{
+	font-family	: trebuchet, arial;
+	font-size	: 10pt;
+}
+#bookingTable .TD_phone { text-align:center; }
+#bookingTable .TD_returned { text-align:center; }
+#bookingTable .TD_booked { text-align:center; }
+#bookingTable .TD_number { text-align:center; font-weight:bold; }
+#bookingTable #filterTR td{
+	border-top	: 2px solid black;
+	padding-top	: 2px;
+}
+.smallTooltip{
+  position      : absolute;
+  z-index       : 690000;
+  top           : 100%;
+  left          : 2px;
+  right         : 2px;
+  border-radius : 0 0 5px 5px;
+  background    : orange;
+  padding       : 0 3px 3px 3px;
+  font-size     : 9pt;
+}
+
+.inputLocker{
+	background			: rgba(180, 0, 0, 0.6);
+	font-family			: trebuchet, arial;
+	font-size			: 10pt;
+	text-align			: center;
+	text-decoration	: none;
+	color					: #fff;
+}
+a.inputLocker:hover{
+	background	: lightblue;
+	color			: #000;
+}
+
+.action{
+	display				: inline-block;
+	margin				: 0 1px;
+	padding				: 0 2px;
+	text-decoration	: none;
+	cursor				: pointer;
+}
+#maxNumber{ text-align	: center; }
+#maxNumber option{ text-align	: right; }
+
+#sort_arrow{
+	display					: inline-block;
+	float						: right;
+	width						: 10px;
+	overflow					: hidden;
+}
+.sort_ascending{
+	background				: url(../images/sort.gif) no-repeat 0 50%;
+}
+.sort_descending{
+	background				: url(../images/sort.gif) no-repeat -11px 50%;
+}
+
+#help{
+	font-family : trebuchet, arial;
+	font-size		: 10pt;
+}
+#help legend{
+	font-family	: tahoma;
+	font-size		: 13pt;
+}
+#help h4{
+	border-bottom	: 1px solid #696969;
+	margin	      : 8px 0;
+	padding	      : 0;
+}
+#help table{
+	font-family	: trebuchet, arial;
+	font-size	: 10pt;
+}
+#help #closeMe{
+	color	: crimson;
+}
+#help #closeMe:hover{
+	color	: red;
+}
+
+.loginBox{
+  border-radius : 5px;
+  background    : rgba( 255, 255, 255, 0.6 );
+  width         : 300px;
+  margin        : 20px auto;
+  padding       : 10px;
+  font-family   : verdana, arial;
+  font-size     : 9pt;
+}
+.loginBox legend{
+  background    : inherit;
+  border-radius : inherit;
+  padding       : 5px;
+  font-size     : 10pt;
+  font-weight   : bold;
+}
+.loginBox input[type=text], .loginBox input[type=password]{
+  display : block;
+  width   : 100%;
+}
+
+#userInfo{
+  border-bottom   : 1px solid #666;
+  padding-bottom  : 2px;
+  margin-bottom   : 5px;
+}
+#userInfo a{
+  text-decoration : none;
+  text-shadow     : 2px 2px 2px #fff;
+  color           : blue;
+}
+#userInfo a:hover{
+  color : crimson;
+}
+#userInfo a.selected{
+  font-weight     : bold;
+  color           : #000;
+}
+
+.good{
+  color : green;
+}
+.bad{
+  color : red;
+}
+
+.disclaimer{
+  border-top  : 1px solid #666;
+  background  : rgba( 255, 255, 255, 1 );
+  margin-top  : 5px;
+  padding     : 5px;
+  text-align  : right;
+}

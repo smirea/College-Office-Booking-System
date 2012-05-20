@@ -1,0 +1,47 @@
+.tPopup { display:none; }
+.tPopup .wrapper{
+	background	: #fff;
+	width	: 500px;
+	padding	: 5px;
+	font-family	: georgia;
+	text-align	: left;
+	color	: #217C97;
+}
+.tPopup .title{
+	font-weight	: bold;
+	font-size	: 11pt;
+	color	: #2E4664;
+}
+.tPopup legend{
+	border-top	: 2px solid #000;
+	background	: #fff;
+}
+.tPopup a.closePopup{
+	font-weight	: bold;
+	text-decoration	: none;
+	font-size	: 8pt;
+	color		: #FF0000;
+}
+.tPopup a.closePopup:hover{
+	color		: #FF0000;
+	text-decoration	: underline;
+}
+.tPopup .description{
+	padding	: 5px;
+	font-size	: 9pt;
+	color	: #949494;
+}
+.tPopup .form table *{
+	font-size	: 9pt;
+}
+.tPopup .form table td{
+	padding		: 2px 5px 0 0;
+	vertical-align	: top;
+}
+.tPopup input, .tPopup textarea{ cursor	: pointer; }
+.clearBoth{
+	visibility	: hidden;
+	height	: 0;
+	line-height	: 0;
+	clear	: both;
+}
