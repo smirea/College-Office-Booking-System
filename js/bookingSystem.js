@@ -396,8 +396,9 @@
       for(var i=0; i<r.length; ++i){
         
         var checkOutBy = {
-          innerHTML:dateFormat(Number(r[i]['timestamp']) * 1000),
-          title:r[i]["checkOutBy"]
+          //innerHTML:dateFormat(Number(r[i]['timestamp']) * 1000),
+          innerHTML: r[i]["booked"],
+          title: r[i]["checkOutBy"]
         };
         var checkInBy = r[i]["returned"].length > 0 ? {title:r[i]["checkInBy"]}: '';
         r[i]['number'] = ++c;
