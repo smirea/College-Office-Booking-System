@@ -56,10 +56,12 @@
 	
 		case 'book':
       $booked = implode('.', array_reverse( explode('.', $_GET['booked']) ));
-			$q = mysql_query( "INSERT INTO $table(type, timestamp, item, booked, returned, phone, email, user, checkOutBy) VALUES
+			$query =  "INSERT INTO $table(type, timestamp, item, booked, returned, phone, email, user, checkOutBy) VALUES
 						( '".$_GET['type']."', '".time()."','".$_GET['item']."','".$booked."','".
-              $_GET['returned']."','".$_GET['phone']."','".$_GET['email']."','".$_GET['user']."','$username')" );
-			sqlToJsonOutput( $q );
+              $_GET['returned']."','".$_GET['phone']."','".$_GET['email']."','".$_GET['user']."','$username')"; 
+      $q = mysql_query($query);
+			
+      sqlToJsonOutput( $q );
 		break;
 		
 		case 'delete':
