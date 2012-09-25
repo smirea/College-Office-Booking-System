@@ -48,7 +48,7 @@
       };
     
       var date  = new Date();
-      date      = date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear();
+      date      = date.getDate()+'.'+('0'+(date.getMonth()+1)).slice(-2)+'.'+date.getFullYear();
 
       obj.html(getStructure({
         date  : date
