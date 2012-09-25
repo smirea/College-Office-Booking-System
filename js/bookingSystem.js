@@ -99,8 +99,8 @@
               action    : 'book',
               type      : opt.type,
               item      : $('#item', obj).val(),
-              booked    : $('#booked', obj).val(),
-              returned  : $('#returned', obj).val(),
+              booked    : formatDate($('#booked', obj).val()),
+              returned  : formatDate($('#returned', obj).val()),
               phone     : $('#phone', obj).val(),
               user      : $('#user', obj).val(),
               email     : $('#email', obj).val()
@@ -322,6 +322,15 @@
             });
           }
         });
+    }
+    
+    function formatDate (dateString) {
+      if (/^[0-9]{2}\.[0-9]\.[0-9]{4}$/.test(dateString)) {
+        var arr = dateString.split('.');
+        arr[1] = '0' + arr[1];
+        dateString = arr.join('.');
+      }
+      return dateString;
     }
 
     function addSmallTooltip( obj ){
