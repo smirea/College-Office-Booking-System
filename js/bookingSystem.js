@@ -269,24 +269,6 @@
             firstDay          : 1,
             dateFormat        : 'dd.mm.yy',
             showButtonPanel   : true,
-            /*
-            create            : function( event, ui ){
-              console.log('in');
-              var self      = $(this);
-              var widget    = $(this).datepicker('widget');
-              var clearBth  = $(document.createElement('button'));
-              clearBtn.attr({
-                'type'  : 'button',
-                'class' : 'ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all'
-              })
-              .html( 'Clear Date' )
-              .bind( 'click.clearDate', function(){
-                widget.find( self.attr('id') ).val('');
-              });
-              widget
-                .find('.ui-datepicker-buttonpane')
-                .append( clearBtn );
-            },*/
             onSelect          : function( dateText, inst ){
               $(this).val( dateText ).trigger( 'keyup' );
             }
@@ -389,12 +371,25 @@
     function resetFilters(){
       $('.filter').val('');
     }
+    
+    function dateFormat (timestamp, length) {
+      length = length || 2;
+      var z = function prependZero (no) {
+        return ('0' + no).slice(-length);
+      };
+      var d = new Date(timestamp);
+      return z(d.getDate())+'.'+z(d.getMonth())+'.'+d.getFullYear();
+    }
 
     function updateTable(r){
       var h = $();
       var c = 0;
       for(var i=0; i<r.length; ++i){
-        var checkOutBy = {title:r[i]["checkOutBy"]};
+        
+        var checkOutBy = {
+          innerHTML:dateFormat(Number(r[i]['timestamp']) * 1000),
+          title:r[i]["checkOutBy"]
+        };
         var checkInBy = r[i]["returned"].length > 0 ? {title:r[i]["checkInBy"]}: '';
         r[i]['number'] = ++c;
         
@@ -413,15 +408,21 @@
         for( var j in structure ){
           var td = $(document.createElement('td'));
           var name = '';
+          var value = null;
           if( typeof structure[j] != 'string' ){
             name = structure[j][0];
+            if (structure[j][1].innerHTML) {
+              value = structure[j][1].innerHTML;
+              delete structure[j][1].innerHTML;
+            }
             td.attr( structure[j][1] );
           } else {
             name = structure[j];
           }
+          value = value || r[i][name];
           td
             .addClass( 'TD_'+name )
-            .html( '<span class="value">'+r[i][name]+'</span>' );
+            .html( '<span class="value">'+value+'</span>' );
           tr.append( td );
         }
         
