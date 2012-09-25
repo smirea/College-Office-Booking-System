@@ -29,7 +29,7 @@
     function init( obj, opt ){
       options = {
         sql     : {
-          orderBy   : "booked, returned",
+          orderBy   : "booked DESC, returned DESC",
           max     : 100
         }
       };
